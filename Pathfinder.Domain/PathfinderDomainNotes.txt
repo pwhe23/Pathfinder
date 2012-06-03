@@ -1,0 +1,2 @@
+﻿
+-The Pathfinder.Domain contains all game objects and logic for the server to run an Adventure
