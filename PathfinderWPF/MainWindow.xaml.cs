@@ -1,4 +1,7 @@
 ﻿
+using System.Windows;
+using System.Windows.Controls;
+
 namespace Pathfinder.WPF {
 
 	/// <summary> Root of the app </summary>
@@ -9,8 +12,28 @@ namespace Pathfinder.WPF {
 			Loaded += MainWindow_Loaded;
 		}
 
-		void MainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e) {
-			Content = new PlayerEditor();
+		void MainWindow_Loaded(object sender, RoutedEventArgs e) {
+			SetContent(new PlayerEditor());
+		}
+
+		public void SetStatus(string message) {
+			Status.Text = message;
+		}
+
+		private void MenuItem_Click(object sender, RoutedEventArgs e) {
+			var item = sender as MenuItem;
+			if (item == null) {
+			} else if (item.Name == "Exit") {
+				Application.Current.Shutdown();
+			} else if (item.Name == "PlayerEditor") {
+				SetContent(new PlayerEditor());
+			} else if (item.Name == "PlayerEditor2") {
+				SetContent(new PlayerEditor2());
+			}
+		}
+
+		private void SetContent(Control control) {
+			Container.Content = control;
 		}
 
 	};

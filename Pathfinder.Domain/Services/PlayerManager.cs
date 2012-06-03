@@ -11,11 +11,21 @@ namespace Pathfinder.Domain {
 
 		public PlayerManager() {
 			FilePath = "PlayerManager.js";
+			Player = new Player();
 		}
 
 		public string _Type { get; set; }
 		public Player Player { get; set; }
 		protected string FilePath { get; set; }
+
+		public void Create() {
+			Player.Strength = new Ability();
+			Player.Dexterity = new Ability();
+			Player.Constitution = new Ability();
+			Player.Intelligence = new Ability();
+			Player.Wisdom = new Ability();
+			Player.Charisma = new Ability();
+		}
 
 		public void Save() {
 			_Type = typeof(PlayerManager).FullName + ", " + typeof(PlayerManager).Assembly.GetName().Name;

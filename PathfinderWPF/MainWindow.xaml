@@ -2,5 +2,21 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
-
+	<DockPanel>
+		<Menu IsMainMenu="True" DockPanel.Dock="Top">
+			<MenuItem Header="_File">
+				<MenuItem x:Name="Exit" Header="_Exit" Click="MenuItem_Click" />
+			</MenuItem>
+			<MenuItem Header="_View">
+				<MenuItem x:Name="PlayerEditor" Header="Player Editor" Click="MenuItem_Click" />
+				<MenuItem x:Name="PlayerEditor2" Header="Player Editor 2" Click="MenuItem_Click" />
+			</MenuItem>
+		</Menu>
+		<StatusBar DockPanel.Dock="Bottom">
+			<TextBlock x:Name="Status">Ready</TextBlock>
+			<Separator/>
+			<TextBlock>Offline</TextBlock>
+		</StatusBar>
+		<ContentControl x:Name="Container" />
+	</DockPanel>
 </Window>
