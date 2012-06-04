@@ -3,6 +3,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using Core;
+using Core.WPF;
 using Pathfinder.Domain;
 
 namespace Pathfinder.WPF {
@@ -25,7 +26,7 @@ namespace Pathfinder.WPF {
 
 		private void Button_Click(object sender, RoutedEventArgs e) {
 			try {
-				//TODO: figure out how to force currently selected control binding to fire so if clicking safe on same field you just edited will work
+				this.ForceBinding();
 				var method = Model.GetType().GetMethod((sender as Button).Name);
 				method.Invoke(Model, new object[0]);
 				_Editor.Refresh(Model.Player);

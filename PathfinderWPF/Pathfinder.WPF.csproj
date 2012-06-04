@@ -44,6 +44,7 @@
     <Reference Include="System.Windows.Controls.WpfPropertyGrid">
       <HintPath>..\lib\System.Windows.Controls.WpfPropertyGrid.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,7 +68,9 @@
     <Compile Include="Editors\PlayerEditor2.xaml.cs">
       <DependentUpon>PlayerEditor2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Binding.cs" />
     <Compile Include="Utility\ObjectEditor.cs" />
+    <Compile Include="Utility\WpfExt.cs" />
     <Page Include="Editors\PlayerEditor2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

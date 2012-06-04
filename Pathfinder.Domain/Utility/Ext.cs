@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Core {
@@ -15,6 +16,14 @@ namespace Core {
 		}
 		public static bool CanConvertFrom(this Type to, Type from) {
 			return TypeDescriptor.GetConverter(to).CanConvertFrom(from);
+		}
+
+		public static void Each<T>(this IEnumerable<T> list, Action<T> func) {
+			foreach (T item in list) func(item);
+		}
+
+		public static void RemoveRange<T>(this IList<T> list, IEnumerable<T> items) {
+			items.Each(i => list.Remove(i));
 		}
 
 	};

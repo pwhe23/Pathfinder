@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls.WpfPropertyGrid;
 using Core;
 
-namespace Pathfinder.WPF {
+namespace Core.WPF {
 
 	/// <summary> The ObjectEditor class provides the mechanisms necessary to edit a naked domain object </summary>
 	public class ObjectEditor : ICustomTypeDescriptor {

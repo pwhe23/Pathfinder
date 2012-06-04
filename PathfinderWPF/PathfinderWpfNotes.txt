@@ -1,3 +1,7 @@
 ﻿
 -The Pathfinder.WPF project will function as the server for the application. It can run as Player or game Master.
--Client can only send instructions to Server which can be approved by the Game Master and then propogated to the other players
+-Client can only send instructions to Server which can be approved by the Game Master and then propagated to the other players
+-
+
+TODO
+-Client/Server, start with CHAT Action
