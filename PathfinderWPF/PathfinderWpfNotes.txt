@@ -5,3 +5,7 @@
 
 TODO
 -Client/Server, start with CHAT Action
+
+NOTES
+http://community.skype.com/t5/Desktop-API-former-Public-API/Here-are-Workarounds-for-the-Skype4COM-Issues/td-p/92128
+http://stackoverflow.com/questions/9066582/c-sharp-skype-api-video-call

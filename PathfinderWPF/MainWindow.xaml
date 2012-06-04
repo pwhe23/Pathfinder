@@ -5,18 +5,19 @@
 	<DockPanel>
 		<Menu IsMainMenu="True" DockPanel.Dock="Top">
 			<MenuItem Header="_File">
-				<MenuItem x:Name="Exit" Header="_Exit" Click="MenuItem_Click" />
+				<MenuItem Name="Exit" Header="_Exit" Click="MenuItem_Click" />
 			</MenuItem>
 			<MenuItem Header="_View">
-				<MenuItem x:Name="PlayerEditor" Header="Player Editor" Click="MenuItem_Click" />
-				<MenuItem x:Name="PlayerEditor2" Header="Player Editor 2" Click="MenuItem_Click" />
+				<MenuItem Name="PlayerAdventure" Header="Player Adventure" Click="MenuItem_Click" />
+				<MenuItem Name="PlayerEditor" Header="Player Editor" Click="MenuItem_Click" />
+				<MenuItem Name="PlayerEditor2" Header="Player Editor 2" Click="MenuItem_Click" />
 			</MenuItem>
 		</Menu>
 		<StatusBar DockPanel.Dock="Bottom">
-			<TextBlock x:Name="Status">Ready</TextBlock>
+			<TextBlock Name="Status">Ready</TextBlock>
 			<Separator/>
 			<TextBlock>Offline</TextBlock>
 		</StatusBar>
-		<ContentControl x:Name="Container" />
+		<ContentControl Name="Container" />
 	</DockPanel>
 </Window>

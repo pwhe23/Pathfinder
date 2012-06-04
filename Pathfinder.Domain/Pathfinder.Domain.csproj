@@ -46,7 +46,6 @@
     <Compile Include="Models\Ability.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Adventure.cs" />
-    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Map.cs" />
     <Compile Include="Models\Master.cs" />

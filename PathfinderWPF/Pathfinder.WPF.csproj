@@ -71,6 +71,15 @@
     <Compile Include="Utility\Binding.cs" />
     <Compile Include="Utility\ObjectEditor.cs" />
     <Compile Include="Utility\WpfExt.cs" />
+    <Compile Include="Views\LogViewer.xaml.cs">
+      <DependentUpon>LogViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapViewer.xaml.cs">
+      <DependentUpon>MapViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayerAdventure.xaml.cs">
+      <DependentUpon>PlayerAdventure.xaml</DependentUpon>
+    </Compile>
     <Page Include="Editors\PlayerEditor2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +97,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Editors\PlayerEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayerAdventure.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,7 +13,7 @@ namespace Pathfinder.WPF {
 		}
 
 		void MainWindow_Loaded(object sender, RoutedEventArgs e) {
-			SetContent(new PlayerEditor());
+			MenuItem_Click(PlayerAdventure, null);
 		}
 
 		public void SetStatus(string message) {
@@ -25,6 +25,8 @@ namespace Pathfinder.WPF {
 			if (item == null) {
 			} else if (item.Name == "Exit") {
 				Application.Current.Shutdown();
+			} else if (item.Name == "PlayerAdventure") {
+				SetContent(new PlayerAdventure());
 			} else if (item.Name == "PlayerEditor") {
 				SetContent(new PlayerEditor());
 			} else if (item.Name == "PlayerEditor2") {

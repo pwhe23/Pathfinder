@@ -2,11 +2,7 @@
 namespace Pathfinder.Domain {
 
 	/// <summary> Each character playing the game </summary>
-	public class Player : IEntity {
-
-		public string EntityID { get; set; }
-		public int Width { get { return 1; } }
-		public int Height { get { return 1; } }
+	public class Player {
 
 		public string Name { get; set; }
 		public Alignment? Alignment { get; set; }
