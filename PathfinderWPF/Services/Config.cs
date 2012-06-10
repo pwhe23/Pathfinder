@@ -1,5 +1,6 @@
 ﻿
 using System.IO;
+using System.Windows;
 using Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -37,6 +38,7 @@ namespace Pathfinder.WPF {
 		public int? DiceRoller_Count { get; set; }
 		public int? DiceRoller_Sides { get; set; }
 
+		public WindowState? MainWindow_WindowState { get; set; }
 		public double? MainWindow_Width { get; set; }
 		public double? MainWindow_Height { get; set; }
 

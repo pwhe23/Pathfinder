@@ -18,6 +18,8 @@
 		<StatusBar DockPanel.Dock="Bottom">
 			<TextBlock Name="Status">Ready</TextBlock>
 			<Separator/>
+			<TextBlock Name="Username"></TextBlock>
+			<Separator/>
 			<TextBlock>Offline</TextBlock>
 		</StatusBar>
 		<ContentControl Name="Container" />

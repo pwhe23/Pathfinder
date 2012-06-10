@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,7 +44,7 @@ namespace Pathfinder.WPF.Views {
 				case "Roll":
 					this.ForceBinding();
 					Rolls.Children.Clear();
-					foreach (var i in Model.Roll()) {
+					foreach (var i in (IEnumerable<int>)App.Execute("roll " + Model.Count + "d" + Model.Sides)) {
 						Rolls.Children.Add(new Label {
 							Content = i.ToString(), 
 							Background = new SolidColorBrush(Colors.White),

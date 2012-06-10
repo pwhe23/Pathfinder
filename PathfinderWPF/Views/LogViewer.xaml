@@ -4,8 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-	<ListBox Name="Log">
-		<ListBoxItem>Log</ListBoxItem>
-	</ListBox>
+             d:DesignHeight="300" d:DesignWidth="300"
+			 FontFamily="Courier New">
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Bottom">
+			<Button Name="Go" DockPanel.Dock="Right" Click="Button_Click">Go</Button>
+			<TextBox Name="Command" Background="Black" Foreground="LightGreen" KeyUp="Command_KeyUp" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+		</DockPanel>
+		<ListBox Name="Log">
+			<ListBoxItem>Log</ListBoxItem>
+		</ListBox>
+	</DockPanel>
 </UserControl>

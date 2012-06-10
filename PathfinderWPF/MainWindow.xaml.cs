@@ -15,6 +15,8 @@ namespace Pathfinder.WPF {
 			MenuItem_Click(PlayerAdventure, null);
 			Width = Config.Instance.MainWindow_Width ?? Width;
 			Height = Config.Instance.MainWindow_Height ?? Height;
+			WindowState = Config.Instance.MainWindow_WindowState ?? WindowState.Normal;
+			Username.Text = App.Username;
 		}
 
 		public void SetStatus(string message) {
@@ -40,6 +42,7 @@ namespace Pathfinder.WPF {
 		}
 
 		private void Window_Closed(object sender, System.EventArgs e) {
+			Config.Instance.MainWindow_WindowState = WindowState;
 			if (WindowState == WindowState.Normal) {
 				Config.Instance.MainWindow_Width = Width;
 				Config.Instance.MainWindow_Height = Height;
