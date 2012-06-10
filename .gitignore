@@ -2,6 +2,7 @@
 *.user
 *.DotSettings
 /PathfinderWPF/obj/
+/PathfinderWPF/bin/Debug/*.js
 /PathfinderWPF/bin/Debug/Pathfinder.Domain.dll
 /PathfinderWPF/bin/Debug/Pathfinder.Domain.pdb
 /PathfinderWPF/bin/Debug/Pathfinder.WPF.exe
