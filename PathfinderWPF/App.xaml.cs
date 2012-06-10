@@ -36,17 +36,24 @@ namespace Pathfinder.WPF {
 
 		public static Object Execute(string command) {
 			AddLog(DateTime.Now.ToString("MM/dd/yy h:mmt").ToLower() + " " + Username + ": " + command);
-			var result = _Commander.Execute(command);
-			if (result == null) {
-				//ignore
-			} else if (result.GetType().CanConvertFrom<string>()) {
-				AddLog(result.ToString());
-			} else if (result is IEnumerable) {
-				foreach (var value in (IEnumerable)result) {
-					if (value != null) AddLog(" > " + value);
+
+			try {
+				var result = _Commander.Execute(command);
+				if (result == null) {
+					//ignore
+				} else if (result.GetType().CanConvertFrom<string>()) {
+					AddLog(result.ToString());
+				} else if (result is IEnumerable) {
+					foreach (var value in (IEnumerable)result) {
+						if (value != null) AddLog(" > " + value);
+					}
 				}
+				return result;
+			} 
+			catch (Exception ex) {
+				AddLog(" > ERROR: " + ex.InnerException().Message);
+				return null;
 			}
-			return result;
 		}
 
 		private void Application_Exit(object sender, System.Windows.ExitEventArgs e) {
