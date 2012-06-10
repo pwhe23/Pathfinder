@@ -68,9 +68,13 @@
     <Compile Include="Editors\PlayerEditor2.xaml.cs">
       <DependentUpon>PlayerEditor2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\Config.cs" />
     <Compile Include="Utility\Binding.cs" />
     <Compile Include="Utility\ObjectEditor.cs" />
     <Compile Include="Utility\WpfExt.cs" />
+    <Compile Include="Views\DiceRoller.xaml.cs">
+      <DependentUpon>DiceRoller.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LogViewer.xaml.cs">
       <DependentUpon>LogViewer.xaml</DependentUpon>
     </Compile>
@@ -97,6 +101,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Editors\PlayerEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DiceRoller.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

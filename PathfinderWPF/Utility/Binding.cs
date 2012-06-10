@@ -49,6 +49,14 @@ namespace Core.WPF {
 					binding.ValidatesOnExceptions = true;
 					tb.SetBinding(TextBox.TextProperty, binding);
 
+				} else if (obj is Selector) {
+					var cb = obj as Selector;
+					if (!cb.SelectedValuePath.HasValue()) cb.SelectedValuePath = "Tag";
+					var binding = new Binding(field) { Mode = BindingMode.TwoWay };
+					binding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
+					binding.ValidatesOnDataErrors = true;
+					cb.SetBinding(Selector.SelectedValueProperty, binding);
+
 				} else if (obj is CheckBox) {
 					var cb = obj as CheckBox;
 					var binding = new Binding(field);

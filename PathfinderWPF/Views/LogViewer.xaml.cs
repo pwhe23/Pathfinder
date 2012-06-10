@@ -1,6 +1,6 @@
 ﻿
 using System.Windows;
-using System.Windows.Controls;
+using Core.WPF;
 
 namespace Pathfinder.WPF.Views {
 
@@ -9,11 +9,13 @@ namespace Pathfinder.WPF.Views {
 
 		public LogViewer() {
 			InitializeComponent();
+			if (this.IsDesignMode()) return;
 			Loaded += LogViewer_Loaded;
 		}
 
 		void LogViewer_Loaded(object sender, RoutedEventArgs e) {
-			Log.Items.Add(new ListBoxItem { Content = "test2" });
+			App.LogViewer = this;
+			App.AddLog("test3");
 		}
 
 	};

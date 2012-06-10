@@ -9,11 +9,12 @@ namespace Pathfinder.WPF {
 
 		public MainWindow() {
 			InitializeComponent();
-			Loaded += MainWindow_Loaded;
 		}
 
 		void MainWindow_Loaded(object sender, RoutedEventArgs e) {
 			MenuItem_Click(PlayerAdventure, null);
+			Width = Config.Instance.MainWindow_Width ?? Width;
+			Height = Config.Instance.MainWindow_Height ?? Height;
 		}
 
 		public void SetStatus(string message) {
@@ -36,6 +37,13 @@ namespace Pathfinder.WPF {
 
 		private void SetContent(Control control) {
 			Container.Content = control;
+		}
+
+		private void Window_Closed(object sender, System.EventArgs e) {
+			if (WindowState == WindowState.Normal) {
+				Config.Instance.MainWindow_Width = Width;
+				Config.Instance.MainWindow_Height = Height;
+			}
 		}
 
 	};

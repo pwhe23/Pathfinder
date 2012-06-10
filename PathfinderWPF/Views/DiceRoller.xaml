@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Pathfinder.WPF.Views.DiceRoller"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:core="clr-namespace:Core.WPF"
+			 mc:Ignorable="d" Height="30"
+			 d:DesignHeight="300" d:DesignWidth="300"
+			 Background="DarkGray">
+	<StackPanel Orientation="Horizontal" Margin="4">
+		<TextBlock Margin="0,2,4,0">Dice:</TextBlock>
+		<ComboBox Name="Count" core:Bindings.Field="Count" />
+		<TextBlock Margin="2,2,2,0">d</TextBlock>
+		<ComboBox Name="Sides" core:Bindings.Field="Sides" />
+		<Button Name="Roll" Click="Button_Click" Margin="4,0,0,0">Roll</Button>
+		<StackPanel Name="Rolls" Orientation="Horizontal" />
+		<Button Name="Clear" Click="Button_Click" Margin="4,0,0,0">Clear</Button>
+	</StackPanel>
+</UserControl>

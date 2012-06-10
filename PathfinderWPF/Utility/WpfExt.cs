@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -98,7 +99,7 @@ namespace Core.WPF {
 		const ushort WM_KEYDOWN = 0x0100;
 		const ushort WM_KEYUP = 0x0101;
 
-		//http://social.msdn.microsoft.com/Forums/en-US/windowssdk/thread/59c947e2-1367-44e8-a086-a86ae0ee55a0/
+		//REF: http://social.msdn.microsoft.com/Forums/en-US/windowssdk/thread/59c947e2-1367-44e8-a086-a86ae0ee55a0/
 		public static void SendKeys(String txt) {
 			var hwnd = new System.Windows.Interop.WindowInteropHelper(Application.Current.MainWindow).Handle;
 			foreach (var key in new UTF8Encoding().GetBytes(txt)) {
@@ -106,6 +107,11 @@ namespace Core.WPF {
 				SendMessage(hwnd, WM_KEYUP, key, 0);
 			}
 			System.Windows.Forms.Application.DoEvents();
+		}
+
+		//REF: http://stackoverflow.com/a/2000791/366559
+		public static bool IsDesignMode(this Control control) {
+			return (bool) (DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof (DependencyObject)).DefaultValue);
 		}
 
 	};

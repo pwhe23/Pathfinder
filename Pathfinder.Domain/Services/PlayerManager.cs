@@ -40,7 +40,7 @@ namespace Pathfinder.Domain {
 			Player = obj.Player;
 		}
 
-		private JsonSerializerSettings Settings() {
+		private static JsonSerializerSettings Settings() {
 			var settings = new JsonSerializerSettings();
 			settings.Converters.Add(new StringEnumConverter());
 			return settings;
